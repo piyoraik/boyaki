@@ -8,7 +8,7 @@ export const onCreatePost = /* GraphQL */ `
       id
       content
       owner
-      timestamps
+      timestamp
     }
   }
 `;
@@ -19,7 +19,7 @@ export const onDeletePost = /* GraphQL */ `
       id
       content
       owner
-      timestamps
+      timestamp
     }
   }
 `;

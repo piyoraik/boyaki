@@ -9,10 +9,20 @@ type Post
       { allow: owner, ownerField: "owner", provider: userPools, operations: [read, create, delete] }
       { allow: private, provider: userPools, operations: [read] }
     ]
+  )
+  @key(
+    name: "SortByTimestamp"
+    fields: ["type", "timestamp"]
+    queryField: "listPostsSortedByTimestamp"
+  )
+  @key(
+    name: "BySpecificOwner"
+    fields: ["owner", "timestamp"]
+    queryField: "listPostsBySpecificOwner"
   ) {
   type: String!
   id: ID
   content: String!
   owner: String
-  timestamps: Int!
+  timestamp: Int!
 }

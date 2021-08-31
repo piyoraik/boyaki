@@ -11,7 +11,7 @@ export const createPost = /* GraphQL */ `
       id
       content
       owner
-      timestamps
+      timestamp
     }
   }
 `;
@@ -25,7 +25,7 @@ export const deletePost = /* GraphQL */ `
       id
       content
       owner
-      timestamps
+      timestamp
     }
   }
 `;
