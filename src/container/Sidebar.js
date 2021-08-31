@@ -46,6 +46,7 @@ const Sidebar = ({ activeListItem }) => {
   const [helperText, setHelperText] = React.useState('')
 
   const handleChange = (event) => {
+    console.log(event.target.value)
     setValue(event.target.value)
     if (event.target.value.length > MAX_POST_CONTENT_LENGTH) {
       setIsError(true)
@@ -57,6 +58,7 @@ const Sidebar = ({ activeListItem }) => {
   }
 
   const onPost = async () => {
+    console.log(value)
     const res = await API.graphql(
       graphqlOperation(createPost, {
         input: {
@@ -116,7 +118,7 @@ const Sidebar = ({ activeListItem }) => {
             <ListItemText primary="Profile" />
           </ListItem>
           <ListItem key="post-input-field">
-            <TextField
+            <ListItemText
               primary={
                 <TextField
                   error={isError}
